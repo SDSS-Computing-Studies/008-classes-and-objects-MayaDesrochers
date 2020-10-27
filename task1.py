@@ -39,7 +39,7 @@ class student:
 
 
     def average(self):
-        answer=round(sum(self.grades)/len(self.grades),1)
+        answer=(sum(self.grades)/len(self.grades)
     
     def getHonorRoll(self):
         self.grades.sort()
