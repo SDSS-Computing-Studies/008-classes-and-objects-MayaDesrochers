@@ -53,10 +53,10 @@ class student:
         result=top1+top2+top3+top4+top5
         honorRoll=result/5
         if honorRoll>=86:
-            print("True")
+            return True
 
         else: 
-            print("False") 
+            return False 
 
 
     def showCourses(self,courses): 
