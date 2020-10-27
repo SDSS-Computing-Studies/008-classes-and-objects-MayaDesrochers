@@ -40,7 +40,8 @@ class student:
 
     def average(self):
         answer=sum(self.grades)/len(self.grades)
-    
+        return answer 
+      
     def getHonorRoll(self):
         self.grades.sort()
         top1=(self.grades[-1])
