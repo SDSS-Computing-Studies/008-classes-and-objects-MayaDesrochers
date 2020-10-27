@@ -23,29 +23,87 @@ constructor     - should require the student name, studentNumber and grade (in t
 """
 
 class student:
+    name=""
+    studentNumber=""
+    grade=""
+    courses=[]
+    grades=[]
+    
 
     # properties should be listed first
 
-    def __init__(): # You will need to create your own input parameters for all methods
-        pass
+    def __init__(self, name, studentNumber, grade): # You will need to create your own input parameters for all methods
+        self.name = name
+        self.studentNumber = studentNumber
+        self.grade = int(grade)
 
-    def __del__():
-        pass
 
     def average(self):
-        pass
+        answer=round(sum(self.grades)/len(self.grades),1)
+    
+    def getHonorRoll(self):
+        self.grades.sort()
+        top1=(self.grades[-1])
+        top2=(self.grades[-2])
+        top3=(self.grades[-3])
+        top4=(self.grades[-4])
+        top5=(self.grades[-5])
+        
+        result=top1+top2+top3+top4+top5
+        honorRoll=result/5
+        if honorRoll>=86:
+            print("True")
 
+        else: 
+            print("False") 
+
+
+    def showCourses(self,courses): 
+        print(courses)
+    
+
+
+    def showGrade(self):
+        index=""
+        index=input("Enter number for a class:") 
+        index=int(index) 
+        print(self.courses[index])
+        print(self.grades[index])
+    
+        
+
+    def getCourses(self,courses):
+        self.courses = courses 
+        return courses   
+        #pass
+
+
+
+    def getGrades(self,grades): 
+        self.grades = grades        
+        return grades  
+    
+
+
+    def __del__(self):
+        pass
+    
+
+
+   
+
+   
 def main():
     # This contains test data that will be used by the autograder.
     # do not modify this function
 
     st1 = student("Anita Bath","91334",11)
     st1.getCourses( ["English","Math","PE","Computers","History","Biology","Japanese"] )
-    st1.getGrades( 91, 94, 87, 99, 82, 100, 73)
+    st1.getGrades( [91, 94, 87, 99, 82, 100, 73])
 
     st2 = student("Joe Lunchbox","12346", 11)
-    st1.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
-    st1.getGrades( 71, 98, 93, 95, 68, 81, 71)
+    st2.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
+    st2.getGrades( [71, 98, 93, 95, 68, 81, 71])
 
 
 
